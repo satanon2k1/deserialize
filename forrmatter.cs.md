@@ -85,12 +85,13 @@ Sử dụng Reflector trong khi deserialize
 * Không có `Binder` (`Binder` mang giá trị `null`): không cần điều kiện nào thêm
 
 * Có `Binder`:
-  1. `BindToType()` phải trả về kiểu dữ liệu của đối tượng cần đạt được, hoặc có thể trả về null khi deserialize đến đối tượng đó
+  1. `BindToType()` phải trả về kiểu dữ liệu của đối tượng cần đạt được hoặc có thể trả về null khi deserialize đến đối tượng đó
   2. Properties chứa gadget cần có:
-	  * Kiểu dữ liệu có chứa `object`,...
+	  * Kiểu dữ liệu là `object`,...
 	  * Kiểu dữ liệu bất kỳ nhưng `setter` đã được ghi đè
 
 Demo code:
+
 ```C#
 using System;
 using System.IO;
@@ -161,7 +162,7 @@ namespace BinaryFormatterNs
 
 ### ***`XmlSerializer`***
 
-Sử dụng các setter trong quá trình deserialize. Không sử dụng cùng các interface. Chỉ serialize các public property có định nghĩa setter
+Sử dụng các setter trong quá trình deserialize. Không sử dụng cùng các interface. Chỉ serialize các public property có setter
 
 Điều kiện:
 
@@ -237,7 +238,7 @@ Có thuộc tính:
 
 * Kiểu dữ liệu của gadget có trong thuộc tính `KnownType`
 
-* Ngoài ra các method được override trong `DataContractSurrogated` có thể ảnh hưởng đến việc (de)serialize như casting sang đối tượng khác, đổi formatter, export ra file,...
+* Ngoài ra các method được override trong `DataContractSurrogated` có thể ảnh hưởng đến việc (de)serialize như casting sang đối tượng khác, đổi formatter, export ra file,... (có thể xem thêm mục TypeConvert trong series phân tích gadget)
 
 Demo code:
 
@@ -320,7 +321,7 @@ Resolver: "<DataCon xmlns=\"http://schemas.datacontract.org/2004/07/DataConNs\" 
 
 ### ***`Newtonsoft.Json.JsonConvert`***
 
-Sử dụng constructor và setter trong quá trình deserialize. Sử dụng được với các interface. Chỉ (de)serialize được các property và field có scope là public
+Sử dụng constructor và setter trong quá trình deserialize. Sử dụng được với các interface. Chỉ các property có scope là public khi (de)serialize mới được gọi tới setter
 
 Điều kiện:
 
