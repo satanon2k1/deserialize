@@ -6,8 +6,6 @@
 1. Và ...
 2. Và ...
 
-## **Các formatter**
-
 #### **GADGET RCE SỬ DỤNG TRONG BÀI**
 
 ```C#
