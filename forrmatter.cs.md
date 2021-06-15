@@ -37,7 +37,7 @@ namespace RCENs
 			set
 			{
 				this._cmd = value;
-				// this.Run();
+				// this.Run(); // use in XmlSerializer
 			}
 		}
 
@@ -175,7 +175,6 @@ using System;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
-using RCENs;
 
 namespace XmlSerNs
 {
@@ -238,7 +237,7 @@ Có thuộc tính:
 
 * Kiểu dữ liệu của gadget có trong thuộc tính `KnownType`
 
-* Ngoài ra các method được override trong `DataContractSurrogated` có thể ảnh hưởng đến việc (de)serialize như casting sang đối tượng khác, đổi formatter, export ra file,... (có thể xem thêm mục TypeConvert trong series phân tích gadget)
+* Ngoài ra các method được override trong `DataContractSurrogated` có thể ảnh hưởng đến việc (de)serialize như casting sang đối tượng khác, đổi formatter, export ra file,... (có thể xem thêm mục TypeConvert trong series phân tích gadget [hiện chưa có])
 
 Demo code:
 
