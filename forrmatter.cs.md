@@ -14,7 +14,7 @@
 
 * [DataContractSerializer](#datacontractserializer)
 
-* [Newtonsoft.Json.JsonConvert](#newtonsoft.json.jsonconvert)
+* [Newtonsoft.Json.JsonConvert](#newtonsoftjsonjsonconvert)
 
 * Các formatter khác trong .NET đều có các yêu cầu tương tự hoặc gọi đến 4 formatter bên trên
 
