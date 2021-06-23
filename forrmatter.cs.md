@@ -233,9 +233,9 @@ Có thuộc tính:
 
 * Điều khiển được kiểu dữ liệu trong constructor tương tự `XmlSerializer`
 
-* Chứa các property có kiểu dữ liệu `object`,... và `DataContractResolver` có method `ResolveName()` trả về kiểu dữ liệu của gadget
-
-* Kiểu dữ liệu của gadget có trong thuộc tính `KnownType`
+* Chứa các property có kiểu dữ liệu `object`,... và:
+  * `DataContractResolver` có method `ResolveName()` trả về kiểu dữ liệu của gadget
+  * Kiểu dữ liệu của gadget có trong thuộc tính `KnownType`
 
 * Ngoài ra các method được override trong `DataContractSurrogated` có thể ảnh hưởng đến việc (de)serialize như casting sang đối tượng khác, đổi formatter, export ra file,... (có thể xem thêm mục TypeConvert trong series phân tích gadget [hiện chưa có])
 
