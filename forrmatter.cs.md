@@ -6,6 +6,18 @@
 1. Và ...
 2. Và ...
 
+## Danh sách formatter
+
+* [BinaryFormatter](#binaryformatter)
+
+* [XmlSerializer](#xmlserializer)
+
+* [DataContractSerializer](#datacontractserializer)
+
+* [Newtonsoft.Json.JsonConvert](#newtonsoft.json.jsonconvert)
+
+* Các formatter khác trong .NET đều có các yêu cầu tương tự hoặc gọi đến 4 formatter bên trên
+
 #### **GADGET RCE SỬ DỤNG TRONG BÀI**
 
 ```C#
