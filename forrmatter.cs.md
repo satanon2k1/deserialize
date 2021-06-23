@@ -384,3 +384,9 @@ Arrays | Objects | Auto | All: "{\"$type\":\"JsonNs.Json, test\",\"a\":{\"$type\
 None: "{\"a\":{\"Key\":\"key\",\"Type\":\"RCENs.RCE, test\",\"Value\":{\"cmd\":\"calc\"}},\"id\":\"123\"}"
 */
 ```
+
+## Tham khảo
+
+* https://klezvirus.github.io/Advanced-Web-Hacking/Serialisation/
+
+* https://www.blackhat.com/docs/us-17/thursday/us-17-Munoz-Friday-The-13th-JSON-Attacks-wp.pdf
