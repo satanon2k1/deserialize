@@ -224,7 +224,7 @@ Serializable: "<DataCon xmlns=\"http://schemas.datacontract.org/2004/07/DataConN
 
 Các trường object sẽ được cài đặt `TypeNameHandling.All` để thuận tiện trong quá trình deserialize
 
-  * *`A` không có kiểu dữ liệu object, `B` kế thừa `A` và tự định nghĩa kiểu dữ liệu object. Thực hiện deserialize theo `A`*: Chạy được với điều kiện `TypeNameHandling` của serializer khác `None`. Khi đó sẽ dưa vào kiểu dữ liệu `B` để deser thay vì kiểu dữ liệu `A`
+  * *`A` không có kiểu dữ liệu object, `B` kế thừa `A` và tự định nghĩa kiểu dữ liệu object. Thực hiện deserialize theo `A`*: Chạy được với điều kiện `TypeNameHandling` của serializer khác `None`. Khi đó sẽ đưa vào kiểu dữ liệu `B` để deser thay vì kiểu dữ liệu `A`
 
 ```C#
 using System.IO;
