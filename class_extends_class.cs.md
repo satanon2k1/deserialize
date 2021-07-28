@@ -139,7 +139,7 @@ namespace BinFormatNs
 // "AAEAAAD/////AQAAAAAAAAAMAgAAAEBmb3JtYXR0ZXIsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAWQmluRm9ybWF0TnMuQ0JpbkZvcm1hdAEAAAAYPHN0clByb3A+a19fQmFja2luZ0ZpZWxkAgIAAAAJAwAAAAUDAAAACVJDRU5zLlJDRQEAAAAEX2NtZAECAAAABgQAAAAEY2FsYws="
 ```
 
-Đầu tiên, điều kiện bắt buộc vẫn là resolve được kiểu dữ liệu `RCENs.RCE` khi gặp, nhưng các kiểu dữ liệu còn lại thì có thể thay thế bằng rất nhiều thứ khác như `int`, `float`, `DateTime`,... (ngoại trừ `string`, các kiểu `Array`,...). Mặc dù đã đọc source của `mscorlib` nhưng mình vẫn chưa có lời giải thích chính xác nhất cho điều này, sẽ có update để giải thích thỏa đáng nhất.
+Đầu tiên, điều kiện bắt buộc vẫn là resolve được kiểu dữ liệu `RCENs.RCE` khi gặp, nhưng các kiểu dữ liệu còn lại thì có thể thay thế bằng rất nhiều thứ khác như `int`, `float`, `DateTime`,... (ngoại trừ `string`, các kiểu `Array`, các `abstract class`,...). Mặc dù đã đọc source của `mscorlib` nhưng mình vẫn chưa có lời giải thích chính xác nhất cho điều này, sẽ có update để giải thích thỏa đáng nhất.
 
 ### ***`XmlSerializer`***
 
@@ -149,7 +149,7 @@ namespace BinFormatNs
 
   * *`A` có kiểu dữ liệu object với scope là `private`, `B` kế thừa `A`. Thực hiện deserialize theo `B`*: Dễ dàng để nhận biết trường hợp này không chạy vì `XmlSerializer` chỉ (de)serialize các property có scope là public (đã nêu tại bài trước).
 
-Như vậy điều kiện để RCE vẫn không thay đổi.
+Như vậy điều kiện để RCE vẫn không thay đổi. Việc kế thừa một `abstract class` cũng tương tự.
 
 ### ***`DataContractSerializer`***
 
@@ -219,6 +219,8 @@ DataMember: "<CDataCon xmlns=\"http://schemas.datacontract.org/2004/07/DataConNs
 Serializable: "<DataCon xmlns=\"http://schemas.datacontract.org/2004/07/DataConNs\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><_x003C_obj_x003E_k__BackingField i:type=\"a:RCE\" xmlns:a=\"http://schemas.datacontract.org/2004/07/RCENs\"><a:_cmd>calc</a:_cmd></_x003C_obj_x003E_k__BackingField><id>123</id></DataCon>"
 */
 ```
+
+Việc deserialize về một `abstract class` sẽ gây lỗi.
 
 ### ***`Newtonsoft.Json.JsonConvert`***
 
@@ -327,3 +329,5 @@ namespace JsonNs
 
 // "{\"obj\":{\"$type\":\"RCENs.RCE, formatter\",\"cmd\":\"calc\"},\"id\":\"id\"}"
 ```
+
+Cả 2 trường hợp đều chạy được với `abstract class`.
